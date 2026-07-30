@@ -91,35 +91,39 @@ export const Hero: React.FC<HeroProps> = ({ onCheckAvailability }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
             
             {/* Check-In Input */}
-            <div className="flex flex-col text-left">
+            <div className="flex flex-col text-left min-w-0">
               <label className="text-xs uppercase tracking-widest text-[#1B3B2B] font-bold mb-1.5 flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>Check-In</span>
               </label>
-              <input
-                type="date"
-                value={checkIn}
-                min={formatDate(today)}
-                onChange={(e) => setCheckIn(e.target.value)}
-                className="w-full px-3 py-2.5 rounded-xl border border-gray-300 bg-white text-sm font-medium focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent outline-none transition-all"
-                required
-              />
+              <div className="relative w-full">
+                <input
+                  type="date"
+                  value={checkIn}
+                  min={formatDate(today)}
+                  onChange={(e) => setCheckIn(e.target.value)}
+                  className="w-full min-w-0 max-w-full appearance-none px-3 py-2.5 rounded-xl border border-gray-300 bg-white text-sm font-medium focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent outline-none transition-all"
+                  required
+                />
+              </div>
             </div>
 
             {/* Check-Out Input */}
-            <div className="flex flex-col text-left">
+            <div className="flex flex-col text-left min-w-0">
               <label className="text-xs uppercase tracking-widest text-[#1B3B2B] font-bold mb-1.5 flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>Check-Out</span>
               </label>
-              <input
-                type="date"
-                value={checkOut}
-                min={checkIn}
-                onChange={(e) => setCheckOut(e.target.value)}
-                className="w-full px-3 py-2.5 rounded-xl border border-gray-300 bg-white text-sm font-medium focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent outline-none transition-all"
-                required
-              />
+              <div className="relative w-full">
+                <input
+                  type="date"
+                  value={checkOut}
+                  min={checkIn}
+                  onChange={(e) => setCheckOut(e.target.value)}
+                  className="w-full min-w-0 max-w-full appearance-none px-3 py-2.5 rounded-xl border border-gray-300 bg-white text-sm font-medium focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent outline-none transition-all"
+                  required
+                />
+              </div>
             </div>
 
             {/* Guests Input */}
